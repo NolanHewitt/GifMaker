@@ -93,7 +93,9 @@ document.body.addEventListener('click', function (event) {
           // Prepending the gif
             document.getElementById("images").prepend(gif);
             //Append rating
-            //
+            var diver = document.createElement("div");
+            diver.id = "diver";
+            diver.innerHTML = "test";
             
         });
     }});
