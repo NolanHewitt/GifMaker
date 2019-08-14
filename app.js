@@ -93,18 +93,20 @@ document.body.addEventListener('click', function (event) {
           // Prepending the gif
             document.getElementById("images").prepend(gif);
             //Append rating
+            //
             
         });
     }});
     
+    //animate gifs on click
     document.querySelectorAll(".gif").forEach(function (img) {
         img.addEventListener("click", function (event) {
-          let state = event.target.getAttribute("data-state");
+          var state = event.target.getAttribute("data-state");
           if (state === "still") {
-            event.target.setAttribute("src", aniImageUrl);
+            event.target.setAttribute("src", event.target.getAttribute("data-animate"));
             event.target.setAttribute("data-state", "animate");
           } else {
-            event.target.setAttribute("src", imageUrl);
+            event.target.setAttribute("src", event.target.getAttribute("data-still"));
             event.target.setAttribute("data-state", "still");
           }
         });
