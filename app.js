@@ -101,7 +101,7 @@ document.body.addEventListener('click', function (event) {
     //animate gifs on click
     document.querySelectorAll(".gif").forEach(function (img) {
         img.addEventListener("click", function (event) {
-          var state = event.target.getAttribute("data-state");
+          let state = event.target.getAttribute("data-state");
           if (state === "still") {
             event.target.setAttribute("src", event.target.getAttribute("data-animate"));
             event.target.setAttribute("data-state", "animate");
