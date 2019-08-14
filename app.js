@@ -99,15 +99,12 @@ document.body.addEventListener('click', function (event) {
     
     document.querySelectorAll(".gif").forEach(function (img) {
         img.addEventListener("click", function (event) {
-          var state = event.target.getAttribute("data-state");
-          // If the clicked image's state is still, update its src attribute to what its data-animate value is.
-          // Then, set the image's data-state to animate
-          // Else set src to the data-still value
+          let state = event.target.getAttribute("data-state");
           if (state === "still") {
-            event.target.setAttribute("src", event.target.getAttribute("data-animate"));
+            event.target.setAttribute("src", aniImageUrl);
             event.target.setAttribute("data-state", "animate");
           } else {
-            event.target.setAttribute("src", event.target.getAttribute("data-still"));
+            event.target.setAttribute("src", imageUrl);
             event.target.setAttribute("data-state", "still");
           }
         });
